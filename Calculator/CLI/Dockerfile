@@ -8,11 +8,11 @@ WORKDIR /app
 COPY ..
 
 # Install the dependencies in the container
-RUN pip install 
+RUN pip install django==3.2
 #--no-cache-dir -r requirements.txt
 
 # Copy the main file to the container
-COPY CliCalculator.py
+#COPY CliCalculator.py
 
 # Set the entrypoint to run the main file
 ENTRYPOINT ["python", "CliCalculator.py"]
