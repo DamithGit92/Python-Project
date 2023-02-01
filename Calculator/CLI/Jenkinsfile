@@ -9,8 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'pip install django==3.2'
-                sh 'python Calculator/CLI/CliCalculator.py'
+                sh 'python Calculator/CLI/CliCalculator.py build'
             }
         }
     }
