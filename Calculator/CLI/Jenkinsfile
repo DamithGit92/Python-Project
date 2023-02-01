@@ -4,9 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: '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', 
-                url: 'https://github.com/DamithGit92/Python-Project.git',
-                branch: 'main'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '<credentials_id>', url: 'https://github.com/DamithGit92/Python-Project.git']]])
             }
         }
         stage('Build') {
