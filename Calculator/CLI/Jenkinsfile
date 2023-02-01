@@ -1,0 +1,18 @@
+pipeline {
+    agent { label 'python' }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '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', url: 'https://github.com/DamithGit92/Python-Project.git']]])
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'pip install django==3.2'
+                sh 'python CliCalculator.py'
+            }
+        }
+    }
+}
+
