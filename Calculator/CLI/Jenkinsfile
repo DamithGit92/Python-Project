@@ -7,11 +7,6 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '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', url: 'https://github.com/DamithGit92/Python-Project.git']]])
             }
         }
-        stage('Build') {
-            steps {
-                sh 'python Calculator/CLI/CliCalculator.py build'
-            }
-        }
     }
 }
 
