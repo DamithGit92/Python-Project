@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'pip install -r Dockerfile'
                 sh 'python Calculator/CLI/CliCalculator.py build'
             }
         }
